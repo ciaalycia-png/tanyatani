@@ -1,10 +1,12 @@
 <script>
   import { KATEGORI, INFO, tgl } from '$lib/data.js';
+  import { ARTIKEL } from '$lib/artikel.js';
+  import { HERO } from '$lib/hero.js';
   let { data } = $props();
 </script>
 <svelte:head><title>Tanya Tani · Tanya jawab pertanian</title></svelte:head>
 <section class="hero">
-  <img src="/hero.svg" alt="Hamparan sawah berundak berwarna hijau saat pagi hari">
+  <img src={HERO} alt="Hamparan sawah berundak berwarna hijau saat pagi hari">
   <div class="wadah">
     <h1>Tanya Tani</h1>
     <p>Punya masalah hama, pupuk, atau bibit? Tanyakan di sini, dan sesama petani serta penyuluh akan menjawab.</p>
@@ -30,5 +32,7 @@
     {/each}
   </ul>
 </main>
+<section class="wadah" style="padding-block:2rem"><div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem"><h2>Artikel pertanian</h2><a href="/artikel">Lihat semua artikel</a></div>
+  <ul class="daftar grid3">{#each ARTIKEL.slice(0, 3) as a}<li class="kartu"><span class="lencana">{a.kategori}</span><h3 style="margin-top:.5rem"><a href="/artikel/{a.slug}">{a.judul}</a></h3><p style="margin:0">{a.ringkasan}</p></li>{/each}</ul></section>
 <section class="info" id="info"><div class="wadah"><h2>Informasi pertanian</h2>
   <div class="grid">{#each INFO as [t, d]}<article><h3>{t}</h3><p>{d}</p></article>{/each}</div></div></section>

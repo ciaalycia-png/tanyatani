@@ -13,7 +13,7 @@
 <header class="atas"><div class="wadah">
   <a class="merek" href="/">🌾 Tanya Tani</a>
   <nav aria-label="Menu utama">
-    <a href="/">Beranda</a><a href="/#info">Informasi pertanian</a>
+    <a href="/">Beranda</a><a href="/artikel">Artikel</a><a href="/#info">Informasi pertanian</a>
     {#if data.user}
       <a href="/tanya">Ajukan pertanyaan</a><span>Halo, {data.user.nama}</span>
       <form method="POST" action="/keluar"><button class="btn-a">Keluar</button></form>
